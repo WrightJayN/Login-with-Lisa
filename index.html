@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="background">
+        <div id="login-screen">
+            <h1>Login</h1>
+            <form>
+                <input type="text" id="username" name="username" placeholder="Username"><br>
+                <div id="password-section">
+                    <input type="password" id="password" name="password" placeholder="Password">
+                    <input type="checkbox" id="custom-checkbox" class="hidden-checkbox" onclick="myFunction()">
+                    <label for="custom-checkbox" id="hide-password" class="checkbox-label active"></label>
+                    <label for="custom-checkbox" id="show-password" class="checkbox-label"></label>
+                </div>
+                
+                <div id="input-group">
+                    <input type="checkbox" id="remember" name="remember"  value ="Remember Me">
+                    <label for="remember" id="remember-label">Remember Me</label>
+                    <a id="forget-password">Forget Password</a>
+                </div>
+            </form>
+            <button>LOGIN</button>
+        </div>
+    </div>
+
+    <script>
+        function myFunction(){
+            let x = document.getElementById("password");
+            let showPassword = document.getElementById("show-password");
+            let hidePassword = document.getElementById("hide-password");
+            if(x.type === "password"){
+                //show password
+                x.type = "text";
+                showPassword.classList.add("active");
+                hidePassword.classList.remove("active");
+            }else{
+                //hide password
+                x.type = "password";
+                hidePassword.classList.add("active");
+                showPassword.classList.remove("active");
+            }
+        }
+    </script>
+
+</body>
+</html>
